@@ -19,9 +19,21 @@ dependencies:
 
 ## Usage
 
+### API
+
+To parse an URL you need to require the `tldextract` shard and
+call the main function `extract` passing the URL as parameter.
+
+It will return a `Struct` containing `subdomain`, `domain` and `suffix`.
+
+See the example below.
 
 ```crystal
 require "tldextract"
+extracted = TLDExtract.extract("https://www.github.com")
+puts extracted.subdomain # www
+puts extracted.domain # github
+puts extracted.suffix # com
 ```
 
 
